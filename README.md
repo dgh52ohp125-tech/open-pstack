@@ -1,7 +1,7 @@
 # open-pstack
 
-[![CI](https://github.com/ericlitman/open-pstack/actions/workflows/ci.yml/badge.svg)](https://github.com/ericlitman/open-pstack/actions/workflows/ci.yml)
-[![Latest release](https://img.shields.io/github/v/release/ericlitman/open-pstack)](https://github.com/ericlitman/open-pstack/releases/latest)
+[![CI](https://github.com/dgh52ohp125-tech/open-pstack/actions/workflows/ci.yml/badge.svg)](https://github.com/dgh52ohp125-tech/open-pstack/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/dgh52ohp125-tech/open-pstack)](https://github.com/dgh52ohp125-tech/open-pstack/releases/latest)
 [![MIT license](https://img.shields.io/github/license/ericlitman/open-pstack)](LICENSE)
 
 **Open Pstack brings [Lauren Tan (@poteto)](https://x.com/poteto)'s [pstack](https://github.com/cursor/plugins/tree/main/pstack) to Claude Code and Codex.** Its job is to stay as close to her original work as possible while translating the parts that depend on Cursor.
@@ -39,7 +39,7 @@ You need a current Claude Code or Codex installation. For the full three-model r
 Run these commands inside Claude Code:
 
 ```text
-/plugin marketplace add ericlitman/open-pstack
+/plugin marketplace add dgh52ohp125-tech/open-pstack
 /plugin install pstack@open-pstack
 /reload-plugins
 ```
@@ -49,7 +49,7 @@ Run these commands inside Claude Code:
 Run these commands in your shell:
 
 ```shell
-codex plugin marketplace add ericlitman/open-pstack --ref main
+codex plugin marketplace add dgh52ohp125-tech/open-pstack --ref main
 codex plugin add pstack@open-pstack
 ```
 
@@ -166,7 +166,7 @@ In this repository, “upstream” means Lauren's original pstack. Open Pstack d
 
 ## Contributing
 
-Fixes for Claude Code or Codex and help bringing over new pstack releases are welcome. Search [GitHub Issues](https://github.com/ericlitman/open-pstack/issues) before opening a new issue. For larger behavior changes, explain why the change belongs in Open Pstack instead of Lauren's original project.
+Fixes for Claude Code or Codex and help bringing over new pstack releases are welcome. Search [GitHub Issues](https://github.com/dgh52ohp125-tech/open-pstack/issues) before opening a new issue. For larger behavior changes, explain why the change belongs in Open Pstack instead of Lauren's original project.
 
 Read [UPSTREAM.md](UPSTREAM.md) before changing content brought over from Lauren's pstack. Pull requests must keep one shared skill tree for Claude Code and Codex and pass the repository's tests, type checks, plugin validation, and static checks.
 
