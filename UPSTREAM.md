@@ -8,13 +8,19 @@ open-pstack tracks [Cursor's pstack](https://github.com/cursor/plugins/tree/main
 | --- | --- |
 | Repository | `https://github.com/cursor/plugins.git` |
 | Path | `pstack/` |
-| Commit | `12d587dfb20741cafc376c42c696c5f6e2a64487` |
-| Upstream version | `0.15.5` |
-| open-pstack version | `1.5.0` |
+| Commit | `9f451cf875ad1239912762f67741e8e5ba6ac0f1` |
+| Upstream version | `0.15.15` |
+| open-pstack version | `1.6.0` |
 
-The table above is the current Cursor sync point. Open Pstack 1.5.0 imports this 0.15.5 sync. `README-UPSTREAM.md` preserves the upstream pstack README verbatim. `CHANGES.md` and `NOTICE.md` describe the adaptations and provenance.
+The table above is the current Cursor sync point. The local Open Pstack 1.6.0 candidate imports this 0.15.15 sync; this does not identify a published release. `README-UPSTREAM.md` preserves the upstream pstack README verbatim. `CHANGES.md` and `NOTICE.md` describe the adaptations and provenance.
 
 ## Upstream-only exclusions
+
+- The model-default changes in `df58112` remain port-specific: keep the Opus max / GPT-6.1 Sol max / Grok xhigh panel and Sol code roles, plus native-parent Why and Reflect roles. These keep the existing Claude Code/Codex provider routes and configured sheets usable. The upstream two-model Opus xhigh / Grok panel is not substituted silently.
+- The new `benchmark-checklist` is model-invocable because poteto-mode and performance playbooks call it. The new principle uses `user-invocable: false`, as all port principle leaves do. `correct` and `poteto-help` retain explicit-invocation metadata.
+- `poteto-help` uses the shared harness/config-home mappings and external links to Cursor guide pages. Cursor Custom Modes, UI shortcuts, `/add-plugin`, and excluded `make-bot-ui` are not advertised as port features. The Cursor guide remains an external reference rather than a duplicated tree.
+- Hourly audits use `/loop 1h` in Claude Code and the supported Codex cadence mapping. The local plan contract keeps standing orders and installed-plugin reads; it does not restore Cursor `/goal`, Cursor source paths, or elapsed-time cancellation. Fork-safe merge and lease protections remain intact.
+- `correct` follows the port's behavior and negative-path test contract instead of requiring deletion solely because a test uses a relational assertion.
 
 - Commits `799151d` and `6fecddb` add and relocate `make-bot-ui`. It depends on Cursor routines, webhook events, and UI primitives that Claude Code and Codex do not share.
 - Four `disable-model-invocation: true` lines from `73f8be4` are not applied to `how`, `why`, `unslop`, or `typescript-best-practices`. Poteto-mode invokes those skills by name, and the flag blocks that route on Claude Code.
@@ -41,8 +47,8 @@ Fetch and inspect only commits that touched pstack after the recorded sync point
 
 ```shell
 git fetch cursor main
-git log --oneline 12d587dfb20741cafc376c42c696c5f6e2a64487..cursor/main -- pstack
-git diff --stat 12d587dfb20741cafc376c42c696c5f6e2a64487..cursor/main -- pstack
+git log --oneline 9f451cf875ad1239912762f67741e8e5ba6ac0f1..cursor/main -- pstack
+git diff --stat 9f451cf875ad1239912762f67741e8e5ba6ac0f1..cursor/main -- pstack
 ```
 
 No output means the tracked pstack tree has not changed. This comparison does not need a polling service or generated mirror branch.

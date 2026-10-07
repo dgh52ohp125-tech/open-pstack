@@ -80,7 +80,7 @@ In Codex, ask:
 Use pstack:setup-pstack to configure pstack.
 ```
 
-Setup checks the models you can actually run, shows how each one will start, and asks before saving the choices. The default review panel uses Opus, GPT-5.6 Sol, and Grok 4.7, and setup probes only the models your roles use. Fable remains available.
+Setup checks the models you can actually run, shows how each one will start, and asks before saving the choices. The default review panel uses Opus, GPT-6.1 Sol, and Grok 4.7, and setup probes only the models your roles use. Fable remains available.
 
 An older model sheet starts using the rolling aliases in memory as soon as this release is installed. Run setup once after updating to persist that migration. It replaces versioned Fable and Opus entries while preserving every role assignment and effort selection.
 
@@ -119,6 +119,9 @@ That is the main workflow. The other skills are there when poteto-mode needs the
 | `maintain-verification-skill` | The project's verification instructions no longer match the product. |
 | `babysit` | A pull request needs CI failures and review comments handled until it is ready. |
 | `reflect` | A hard task is finished and its lessons should improve the next run. |
+| `poteto-help` | You want help choosing a skill or getting started in Claude Code or Codex. |
+| `correct` | Agents repeat the same mistake and the repository needs a structural guard. |
+| `benchmark-checklist` | You need to verify what a performance measurement actually proves. |
 
 Plugin skills include `pstack:` in their name. In Claude Code, invoke a native skill such as `/pstack:architect`. In Codex, ask for the skill, such as `Use pstack:architect for this design.` See the [technical reference](docs/reference.md) for the full list.
 
@@ -155,7 +158,7 @@ This repository also keeps:
 
 ## Staying close to Lauren's pstack
 
-Open Pstack 1.5.0 tracks pstack 0.15.5 at Cursor commit [`12d587dfb20741cafc376c42c696c5f6e2a64487`](https://github.com/cursor/plugins/commit/12d587dfb20741cafc376c42c696c5f6e2a64487).
+This Open Pstack 1.6.0 candidate tracks pstack 0.15.15 at Cursor commit [`9f451cf875ad1239912762f67741e8e5ba6ac0f1`](https://github.com/cursor/plugins/commit/9f451cf875ad1239912762f67741e8e5ba6ac0f1). It is a local compatibility update, not a published release. The port keeps its existing Opus/Sol/Grok model defaults and native Claude Code/Codex routes; see [the documented adaptations](UPSTREAM.md).
 
 The two projects have separate version numbers. The pstack version identifies Lauren's upstream content. The Open Pstack version identifies the Claude Code and Codex package built from it.
 

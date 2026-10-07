@@ -22,6 +22,8 @@ This plugin is a port of upstream MIT-licensed work. All upstream copyright noti
 | `plugins/pstack/skills/poteto-mode/SKILL.md` (0.15.1 reply-writing evidence rule) | [cursor/plugins/pstack @ f8abedd](https://github.com/cursor/plugins/tree/f8abeddd1862dc73704e3d719dd73df0d51b8c71/pstack) | (c) 2026 Lauren Tan | MIT | [LICENSE](LICENSE) |
 | `plugins/pstack/skills/` (0.15.2 to 0.15.5 changes: three-model defaults, code-ready rounds, owner authority, prompt cuts, decision-trail runs, `show-me-your-work/scripts/log.sh`), `README-UPSTREAM.md` | [cursor/plugins/pstack @ 12d587d](https://github.com/cursor/plugins/tree/12d587dfb20741cafc376c42c696c5f6e2a64487/pstack) | (c) 2026 Lauren Tan | MIT | [LICENSE](LICENSE) |
 
+| `plugins/pstack/skills/{correct,poteto-help,benchmark-checklist,principle-explain-the-number}/`, updated design, performance, delegation, plan and PR guidance, `plugins/pstack/agents/poteto-agent.md`, `README-UPSTREAM.md` (0.15.6 to 0.15.15) | [cursor/plugins/pstack @ 9f451cf](https://github.com/cursor/plugins/tree/9f451cf875ad1239912762f67741e8e5ba6ac0f1/pstack) | (c) 2026 Lauren Tan | MIT | [LICENSE](LICENSE) |
+
 ## What changed in the port
 
 The port is editorial, not mechanical. See [CHANGES.md](CHANGES.md) for the full per-skill audit of substitutions applied.

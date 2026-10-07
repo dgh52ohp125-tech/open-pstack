@@ -5,6 +5,12 @@ This port applies the Cursor → Claude Code substitutions in skill bodies. Earl
 
 ## Unreleased
 
+### 1.6.0 candidate: Cursor pstack 0.15.15
+
+Tracks `9f451cf875ad1239912762f67741e8e5ba6ac0f1`. Adds `correct`, `poteto-help` with prompting and recipe references, `benchmark-checklist`, and `principle-explain-the-number`. Imports agent-resistant design checks, fresh helpers for new tasks, hourly owner audits, pushes after verifiable units, the current performance mantras, PR-body headings and built-in PR-tool preference, and schema-first TypeScript cast guidance. The plan validator and its tests enforce the hourly schedule. `README-UPSTREAM.md` matches the pinned upstream README byte for byte.
+
+The shared Claude Code/Codex tree keeps its provider-qualified model defaults and no-fallback policy, config-home handling, fork-aware PR and expected-head merge rules, installed-plugin lookup, and liveness-based cancellation. Help uses port invocations and supported harness features; Cursor-only guide pages stay external. The benchmark skill remains callable by workflows, the new principle is user-hidden, and Correct preserves meaningful negative-path tests. See `UPSTREAM.md` for exclusions. Local checks do not establish installed-harness live acceptance; this candidate is not merged, tagged, released, or installed globally.
+
 **Claude poteto-agent preload.** The Claude Code agent definition preloads `pstack:poteto-mode` through its `skills` frontmatter. Claude subagents start with isolated context, so the upstream prompt alone exposed the skill name but not its body. The shared skill tree and the Codex path are unchanged. The static invariants preserve the binding, and the behavioral check proves that the packaged agent can read a named principle without invoking `Skill` or reading a file.
 
 **GPT-6.1 Sol default and the `ultra` effort.** The Sol row now uses `gpt-6.1-sol`, so the first-run `bug-fix`, `perf-issue`, and `hillclimb` roles and the arena, architect, and interrogate panels name `codex:gpt-6.1-sol@max`. The effort universe adds `ultra`. A row offers it only when its CLI's model entry lists it: Codex lists `ultra` for `gpt-6.1-sol` but not for the Luna models, so only the Sol row offers it. Setup rejects `ultra` on any other row, and the runner passes it to Codex unchanged. An existing sheet that names `codex:gpt-5.6-sol@<effort>` keeps running that model. `/setup-pstack` proposes `gpt-6.1-sol` on the next rerun and keeps the old model if the operator declines. `UPSTREAM.md` keeps the exclusion that leaves these three roles on Sol.

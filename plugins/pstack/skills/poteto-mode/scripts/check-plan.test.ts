@@ -138,7 +138,7 @@ describe("check-plan", () => {
     for (const item of FORBIDDEN_FENCE) {
       expect(skeleton.includes(item), item).toBe(false);
     }
-    expect(skeleton).toContain("30-minute");
+    expect(skeleton).toContain("hourly");
     expect(skeleton).toContain(CONTRACT.laneSentence);
   });
 
@@ -148,6 +148,13 @@ describe("check-plan", () => {
       const mutated = removePhrase(skeleton, phrase);
       expect(problemsOf(mutated).length, phrase).toBeGreaterThan(0);
     }
+  });
+
+  it("rejects the previous half-hour audit schedule", () => {
+    const legacy = replaceOnce(skeleton, "hourly audit tick", "30-minute audit tick");
+    const result = checkPlan(legacy, "legacy-plan.md");
+    expect(result.ok).toBe(false);
+    expect(result.problems.join("\n")).toContain('Program checklist lacks "hourly"');
   });
 
   it("accepts an ungated review block", () => {
