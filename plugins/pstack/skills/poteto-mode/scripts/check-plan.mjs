@@ -168,12 +168,26 @@ function toLines(raw) {
     start = close === -1 ? 0 : close + 1;
   }
   const lines = [];
-  let fence = false;
+  /** @type {{ char: string, length: number } | null} */
+  let fence = null;
   for (let i = start; i < split.length; i++) {
     const text = split[i] ?? "";
     const n = i + 1;
-    if (/^```/.test(text)) fence = !fence;
-    lines.push({ n, text, code: fence });
+    let code = Boolean(fence);
+    if (fence) {
+      const closing = text.match(/^ {0,3}(`+|~+)[ \t]*$/);
+      if (closing && closing[1]?.[0] === fence.char && closing[1].length >= fence.length) {
+        code = false;
+        fence = null;
+      }
+    } else {
+      const opening = text.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+      if (opening?.[1] && !(opening[1][0] === "`" && opening[2]?.includes("`"))) {
+        fence = { char: opening[1][0] ?? "", length: opening[1].length };
+        code = true;
+      }
+    }
+    lines.push({ n, text, code });
   }
   return lines;
 }

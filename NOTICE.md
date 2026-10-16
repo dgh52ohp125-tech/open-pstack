@@ -24,6 +24,8 @@ This plugin is a port of upstream MIT-licensed work. All upstream copyright noti
 
 | `plugins/pstack/skills/{correct,poteto-help,benchmark-checklist,principle-explain-the-number}/`, updated design, performance, delegation, plan and PR guidance, `plugins/pstack/agents/poteto-agent.md`, `README-UPSTREAM.md` (0.15.6 to 0.15.15) | [cursor/plugins/pstack @ 9f451cf](https://github.com/cursor/plugins/tree/9f451cf875ad1239912762f67741e8e5ba6ac0f1/pstack) | (c) 2026 Lauren Tan | MIT | [LICENSE](LICENSE) |
 
+| `plugins/pstack/skills/{ketchup,in-your-own-words,sharpen}/`, updated shared skills/principles, orchestration and watch tools, `README-UPSTREAM.md` (0.15.25 sync) | [cursor/plugins/pstack @ f713f14](https://github.com/cursor/plugins/tree/f713f14203cd6420cec13cd7c55c32d598dbab68/pstack) | (c) 2026 Lauren Tan | MIT | [LICENSE](LICENSE) |
+
 ## What changed in the port
 
 The port is editorial, not mechanical. See [CHANGES.md](CHANGES.md) for the full per-skill audit of substitutions applied.

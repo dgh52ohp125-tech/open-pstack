@@ -1,5 +1,9 @@
 # CHANGES — applied substitutions
 
+## 1.7.0 candidate syncs to Cursor pstack 0.15.25
+
+Adds ketchup, in-your-own-words, and sharpen; makes the invoking chat the poteto-mode runner; imports shorter reasoning-led principles, usable-app readiness, paginated review threads, default-branch worktree audits, and a GitHub/Origin PR-chain frontier without Graphite. Preserves Claude Code/Codex provider routing, requested efforts, config homes, native preload, no implicit timeout/fallback, and guarded stack landing. The plan validator now handles nested, tilde, and indented Markdown fences. See UPSTREAM.md and docs/upstream-sync-0.15.25.md for integration choices and validation. This is a review candidate, not a release.
+
 Mergify auto-queue is live: ready PRs to main require passing verify, Unfret and exact-head live-gate; workflow changes require operator queueing.
 This port applies the Cursor → Claude Code substitutions in skill bodies. Earlier drafts left them flagged; this revision resolves them. A later pass added a Codex build that shares the same skills; see [Codex port](#codex-port) below.
 
