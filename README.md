@@ -125,6 +125,8 @@ That is the main workflow. The other skills are there when poteto-mode needs the
 
 Plugin skills include `pstack:` in their name. In Claude Code, invoke a native skill such as `/pstack:architect`. In Codex, ask for the skill, such as `Use pstack:architect for this design.` See the [technical reference](docs/reference.md) for the full list.
 
+See the [Arabic workflow diagrams](docs/diagrams/pstack-workflow.html) and [orchestration architecture analysis](docs/pstack-architecture.md) for the current mechanics and a proposed reuse beyond software engineering.
+
 ## Models and token use
 
 Some pstack workflows use one model. Skills such as `architect`, `arena`, and `interrogate` can run several models in parallel. Each model run uses the subscription and token allowance of its own command-line tool.
@@ -158,7 +160,7 @@ This repository also keeps:
 
 ## Staying close to Lauren's pstack
 
-This Open Pstack 1.6.0 candidate tracks pstack 0.15.15 at Cursor commit [`9f451cf875ad1239912762f67741e8e5ba6ac0f1`](https://github.com/cursor/plugins/commit/9f451cf875ad1239912762f67741e8e5ba6ac0f1). It is a local compatibility update, not a published release. The port keeps its existing Opus/Sol/Grok model defaults and native Claude Code/Codex routes; see [the documented adaptations](UPSTREAM.md).
+This Open Pstack 1.7.0 candidate tracks pstack 0.15.25 at Cursor commit [`f713f14203cd6420cec13cd7c55c32d598dbab68`](https://github.com/cursor/plugins/commit/f713f14203cd6420cec13cd7c55c32d598dbab68). It is a local compatibility update, not a published release. The port keeps its existing Opus/Sol/Grok model defaults and native Claude Code/Codex routes; see [the documented adaptations](UPSTREAM.md).
 
 The two projects have separate version numbers. The pstack version identifies Lauren's upstream content. The Open Pstack version identifies the Claude Code and Codex package built from it.
 

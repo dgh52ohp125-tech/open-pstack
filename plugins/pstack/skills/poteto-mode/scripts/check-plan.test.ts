@@ -128,6 +128,20 @@ describe("check-plan", () => {
     expect(result.report[0]).toContain("verify-perf=4");
   });
 
+  for (const [open, inside, close] of [
+    ["````markdown", "```\n## fake section\n- [x] fake", "````"],
+    ["~~~markdown", "```\n## fake section\n- [x] fake", "~~~"],
+    ["   ```markdown", "## fake section\n- [x] fake", "   ````"],
+  ]) {
+    it(`ignores headings and checkboxes inside ${JSON.stringify(open)}`, () => {
+      const fenced = `${open}\n${inside}\n${close}\n`;
+      const source = skeleton.replace("## Program checklist", fenced + "## Program checklist");
+      expect(checkPlan(source).problems).toEqual([]);
+      const broken = source.replace("## Program checklist", "## Wrong checklist");
+      expect(checkPlan(broken).ok).toBe(false);
+    });
+  }
+
   it("rejects the playbook file as checker input", () => {
     const result = checkPlan(playbook, "multi-phase-plan.md");
     expect(result.ok).toBe(false);

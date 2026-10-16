@@ -8,11 +8,21 @@ open-pstack tracks [Cursor's pstack](https://github.com/cursor/plugins/tree/main
 | --- | --- |
 | Repository | `https://github.com/cursor/plugins.git` |
 | Path | `pstack/` |
-| Commit | `9f451cf875ad1239912762f67741e8e5ba6ac0f1` |
-| Upstream version | `0.15.15` |
-| open-pstack version | `1.6.0` |
+| Commit | `f713f14203cd6420cec13cd7c55c32d598dbab68` |
+| Upstream version | `0.15.25` |
+| open-pstack version | `1.7.0` |
 
-The table above is the current Cursor sync point. The local Open Pstack 1.6.0 candidate imports this 0.15.15 sync; this does not identify a published release. `README-UPSTREAM.md` preserves the upstream pstack README verbatim. `CHANGES.md` and `NOTICE.md` describe the adaptations and provenance.
+The table above is the current Cursor sync point. The local Open Pstack 1.7.0 candidate imports this 0.15.25 sync; this does not identify a published release. `README-UPSTREAM.md` preserves the upstream pstack README verbatim. `CHANGES.md` and `NOTICE.md` describe the adaptations and provenance.
+
+## 0.15.25 integration decisions
+
+Resolved current remote refs on 2026-10-16. Previous port main was `5c050f1`, tracking Cursor `9f451cf875ad1239912762f67741e8e5ba6ac0f1` (0.15.15). Current Cursor main is `f713f14203cd6420cec13cd7c55c32d598dbab68`; its latest pstack-changing commit is `99743e9c151c8537cbbf1f98bb38f34ef3368453`. The recorded sync uses the resolved repository tip, whose pstack manifest is 0.15.25.
+
+- Import the three new skills, prompt/principle refinements, parent-as-runner semantics, usable-app verification readiness, review-thread pagination, default-branch worktree auditing, and forge-derived orchestration frontier.
+- Keep parent-owned provider dispatch, model defaults, explicit requested efforts, config homes, native skill preload, testable plan contract, and guarded fork/stack landing. Do not import Cursor's adaptive effort reductions, speed slugs, nearest-model fallback, runtime-based stall cancellation, cloud-only placement, or plugin discovery by highest version. A caller-supplied external deadline remains explicit.
+- Keep the port's detailed shipping/autopilot safety steps where upstream shortened them. Add ketchup catch-ups without removing exact-head/base/lease guards. Preserve native tool mappings in overlapping prose cuts. `ketchup` stays model-invocable because autopilot calls it; `in-your-own-words` and `sharpen` are explicit user entry points.
+- Adapt the fence parser inside the existing exported validator and preserve the port's broader test/typecheck scripts. Register new skills with the exact-head verifier. The new Cursor root `plugin.json`, Cursor manifest, and external guide are not port distribution files.
+- Conflicts were resolved by semantic three-way review; no wholesale replacement of the adapted tree. The sync report records the scope and validation limits.
 
 ## Upstream-only exclusions
 
@@ -47,15 +57,15 @@ Fetch and inspect only commits that touched pstack after the recorded sync point
 
 ```shell
 git fetch cursor main
-git log --oneline 9f451cf875ad1239912762f67741e8e5ba6ac0f1..cursor/main -- pstack
-git diff --stat 9f451cf875ad1239912762f67741e8e5ba6ac0f1..cursor/main -- pstack
+git log --oneline f713f14203cd6420cec13cd7c55c32d598dbab68..cursor/main -- pstack
+git diff --stat f713f14203cd6420cec13cd7c55c32d598dbab68..cursor/main -- pstack
 ```
 
 No output means the tracked pstack tree has not changed. This comparison does not need a polling service or generated mirror branch.
 
 ## Incorporate a change
 
-1. Create or update a GitHub issue in `ericlitman/open-pstack` and branch from current `main`.
+1. Create or update a GitHub issue in this repository and branch from current remote `main`. If Issues are disabled, record the work in the PR without changing repository settings.
 2. Read each upstream pstack commit in order. Bring over its intent and content, then apply only the Claude Code and Codex substitutions documented in `CHANGES.md`.
 3. Keep one shared `plugins/pstack/skills/` tree. Put harness translation in the existing `codex-tools.md` and provider routing in `provider-dispatch.md`; do not fork a skill per harness.
 4. Update the commit and version in this file, the affected provenance rows in `NOTICE.md`, and `README-UPSTREAM.md` when upstream changes it.

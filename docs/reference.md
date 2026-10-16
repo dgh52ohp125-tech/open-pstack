@@ -231,3 +231,7 @@ MIT. Three upstream LICENSE files are preserved:
 ## Pstack 0.15.15 compatibility update
 
 The shared catalog adds `poteto-help`, `correct`, `benchmark-checklist`, and the user-hidden `principle-explain-the-number`. Help translates setup and invocation for the current harness and links Cursor guide pages as external references. Correct turns repeated mistakes into enforceable rules. Poteto-mode and the performance playbooks call the checklist before reporting measurements. New tasks use fresh helpers except for costly state that cannot be moved; owner audit cadence is hourly. Existing provider choices and user model sheets are preserved. See [UPSTREAM.md](../UPSTREAM.md) for the pinned source and deliberate differences.
+
+## Pstack 0.15.25 compatibility update
+
+`in-your-own-words` restates the goal on explicit request. `sharpen` improves the task framing and then executes it. `ketchup` gives a read-only catch-up from current facts and existing visuals, and is available to autopilot workflows. The invoking chat now owns the playbook; `poteto-agent` is its delegate. Orchestration discovers the PR base chain through GitHub or Origin without Graphite. See the [sync report](upstream-sync-0.15.25.md), [architecture analysis](pstack-architecture.md), and [Arabic diagrams](diagrams/pstack-workflow.html).
