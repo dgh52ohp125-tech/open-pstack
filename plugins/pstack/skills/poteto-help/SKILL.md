@@ -26,6 +26,7 @@ Check the state that changes the answer, and mention it only when it does:
 
 - No `pstack-models.md` in the [resolved harness config home](../poteto-mode/references/codex-tools.md#harness-config-homes) means `/pstack:setup-pstack` hasn't run for this user, so every role uses its default model.
 - No `verify-*` skill or other app harness in the project means agents have no scripted way to drive the app. Mention `/pstack:create-verification-skill` when the question is about proving a change works.
+- No formal verification skill in the project means no property is checked past what tests reach. Mention `/pstack:create-formal-verification-skill` when the question is about a race, an invariant, or another case tests rarely hit. When one exists and the code it covers changed after the commit it records as last in sync, mention `/pstack:maintain-formal-verification-skill` if the question touches that code.
 
 When the model rule is missing and it matters, ask whether the user wants to pick a model for each role and a requested effort per assigned model family now. It matters when the user is new, the question is about setup or cost, or the answer depends on which models run. Ask at most once per chat. If the need is also unclear, ask both questions together. Offer two choices:
 
@@ -35,7 +36,7 @@ When the model rule is missing and it matters, ask whether the user wants to pic
 ## Get set up
 
 1. Install the Open Pstack marketplace and `pstack@open-pstack` using the commands in the [port README](https://github.com/ericlitman/open-pstack#install). Use the user's fork marketplace when they installed this fork.
-2. Run [`/pstack:setup-pstack`](../setup-pstack/SKILL.md). It maps roles, asks one requested effort per assigned family, probes those models, and saves a model sheet only after confirmation. The rule applies to new chats.
+2. Run [`/pstack:setup-pstack`](../setup-pstack/SKILL.md). It maps roles, asks one requested effort per assigned family, probes those models, and saves a model sheet only after confirmation. The rule applies to new chats. Then it offers once each to generate a verification skill and a formal verification skill for the project, unless the project already has one.
 3. Start a real task with `/pstack:poteto-mode`, a goal, and a check that can pass or fail.
 
 Claude Code loads a SessionStart instruction that can route non-trivial work into poteto-mode. Codex starts when the user asks for the skill by name. The [port README](https://github.com/ericlitman/open-pstack#readme) and [guide page 1](https://github.com/cursor/plugins/blob/main/pstack/docs/guide/01-setup.md) have the details. Offer to word their first prompt with them, per [`references/prompting.md`](references/prompting.md).
