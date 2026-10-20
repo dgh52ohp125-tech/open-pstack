@@ -8,11 +8,21 @@ open-pstack tracks [Cursor's pstack](https://github.com/cursor/plugins/tree/main
 | --- | --- |
 | Repository | `https://github.com/cursor/plugins.git` |
 | Path | `pstack/` |
-| Commit | `f713f14203cd6420cec13cd7c55c32d598dbab68` |
-| Upstream version | `0.15.25` |
-| open-pstack version | `1.7.0` |
+| Commit | `88d47514b82e7c44f00f2b2a72ff6dd12158038c` |
+| Upstream version | `0.15.29` |
+| open-pstack version | `1.8.0` |
 
-The table above is the current Cursor sync point. The local Open Pstack 1.7.0 candidate imports this 0.15.25 sync; this does not identify a published release. `README-UPSTREAM.md` preserves the upstream pstack README verbatim. `CHANGES.md` and `NOTICE.md` describe the adaptations and provenance.
+The table above is the current Cursor sync point. The local Open Pstack 1.8.0 candidate imports this 0.15.29 sync; this does not identify a published release. `README-UPSTREAM.md` preserves the upstream pstack README verbatim. `CHANGES.md` and `NOTICE.md` describe the adaptations and provenance.
+
+## 0.15.29 integration decisions
+
+Imported the 16 upstream commits from `f713f14203cd6420cec13cd7c55c32d598dbab68` to `88d47514b82e7c44f00f2b2a72ff6dd12158038c` mechanically with `scripts/upstream-audit.py` and `scripts/upstream-merge.py`, then resolved six conflicts by semantic three-way review. Two new skills arrive whole: `create-formal-verification-skill` and `maintain-formal-verification-skill`. `setup-pstack` gains steps 10 and 11 offering the verification and formal-verification skills; `poteto-help` gains the matching routing line, the formal-verification state check, and the setup-offer sentence; `recipes.md` gains the `in-your-own-words`, `sharpen`, formal-verification, and `ketchup` entries. `ketchup` takes the upstream rewrite of its length rules verbatim, which makes it list every waiting item instead of cutting to a word count.
+
+- `make-bot-ui` stays excluded: it is still built entirely from Cursor routine, webhook, and UI primitives that Claude Code and Codex do not share.
+- The port keeps its `disable-model-invocation` exclusion for `typescript-best-practices`; upstream added the flag again for that skill, and poteto-mode calls it by name on Claude Code, so the flag would break that route. `ketchup` keeps the port's model-invocable frontmatter for the same reason, because autopilot calls it by name.
+- `poteto-mode` keeps the port's Claude Code and Codex tool mappings over upstream's Cursor-only `AskQuestion`, `create-skill`, and `cursor-team-kit` references.
+- `setup-pstack` keeps the port's provider-dispatch model sheet and rejects upstream's Cursor rules file; only the two new optional-offer steps are imported.
+- The upstream rewording of `poteto-help`'s Cursor-guide and Custom Mode sentences is not imported, because the port already routes those decisions through the harness mapping files.
 
 ## 0.15.25 integration decisions
 
