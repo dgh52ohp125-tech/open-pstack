@@ -1,5 +1,9 @@
 # CHANGES — applied substitutions
 
+## 1.8.0 candidate syncs to Cursor pstack 0.15.29
+
+Imports the 16 upstream commits from 0.15.25 to 0.15.29. Adds `create-formal-verification-skill` and `maintain-formal-verification-skill` whole. `setup-pstack` gains steps 10 and 11 that offer those two skills to a project that lacks them; `poteto-help` gains the matching routing line, formal-verification state check, and setup-offer sentence; `recipes.md` gains the `in-your-own-words`, `sharpen`, formal-verification, and `ketchup` entries. `ketchup` takes upstream's rewrite of its length rules verbatim, so it now lists every waiting item instead of trimming to a word count. `typescript-best-practices` takes upstream's expanded rule table while keeping the port's `disable-model-invocation` exclusion, because poteto-mode calls it by name on Claude Code and the flag would block that route. `make-bot-ui` stays excluded. See UPSTREAM.md for the full decision record. This is a review candidate, not a release.
+
 ## 1.7.0 candidate syncs to Cursor pstack 0.15.25
 
 Adds ketchup, in-your-own-words, and sharpen; makes the invoking chat the poteto-mode runner; imports shorter reasoning-led principles, usable-app readiness, paginated review threads, default-branch worktree audits, and a GitHub/Origin PR-chain frontier without Graphite. Preserves Claude Code/Codex provider routing, requested efforts, config homes, native preload, no implicit timeout/fallback, and guarded stack landing. The plan validator now handles nested, tilde, and indented Markdown fences. See UPSTREAM.md and docs/upstream-sync-0.15.25.md for integration choices and validation. This is a review candidate, not a release.
